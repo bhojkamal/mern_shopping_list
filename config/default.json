@@ -1,4 +1,4 @@
 {
-  "mongoURI": "mongodb://localhost:27017",
-  "jwtSecret": "8F8F13F5D6BBCA0AE85F0BA0DF65CFB6B949C2BD2534FFFB6A626155182B97AC"
+  "mongoURI": "mongodb_URI",
+  "jwtSecret": "JWT_SECRET"
 }
