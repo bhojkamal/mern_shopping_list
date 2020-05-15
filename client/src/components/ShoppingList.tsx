@@ -9,14 +9,15 @@ const ShoppingList = ({
   getItems,
   item,
   isAuthenticated,
-  deleteItem
+  deleteItem,
 }: IShoppingList) => {
   useEffect(() => {
     getItems();
   }, [getItems]);
 
   const handleDelete = (id: string) => {
-    deleteItem(id);
+    const adel = window.confirm('Are you sure to delete this record?');
+    if (adel) deleteItem(id);
   };
 
   const { items } = item;
@@ -49,7 +50,7 @@ const ShoppingList = ({
 
 const mapStateToProps = (state: IItemReduxProps) => ({
   item: state.item,
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
 });
 
 export default connect(mapStateToProps, { getItems, deleteItem })(ShoppingList);
